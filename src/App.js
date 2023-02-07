@@ -26,6 +26,7 @@ class App extends Component {
       imageUrl: '',
       // box: {},
       boxes: [],
+      bees:'',
       route: 'signin',
       isSignedIn: false,
       user: {
@@ -72,6 +73,7 @@ class App extends Component {
     return data.outputs[0].data.regions.map(face => {
       const clarifaiFace = face.region_info.bounding_box;
       return {
+        gee:data.outputs[0].data.regions.length,
         leftCol: clarifaiFace.left_col * width,
         topRow: clarifaiFace.top_row * height,
         rightCol: width - (clarifaiFace.right_col * width),
@@ -85,6 +87,9 @@ class App extends Component {
   // }
   displayFaceBox = (boxes) => {
     this.setState({boxes: boxes});
+    console.log('apple', boxes[0].gee);
+    this.setState({bees:boxes[0].gee});
+   
   }
 
 
@@ -142,7 +147,7 @@ class App extends Component {
   }
 
   render() {
-    const { isSignedIn, imageUrl, route, boxes } = this.state;
+    const { isSignedIn, imageUrl, route, boxes, bees } = this.state;
     return (
       <div className="App">
        {/* passing down the state property and function as props   */}
@@ -154,12 +159,15 @@ class App extends Component {
               <Rank
                 name={this.state.user.name}
                 entries={this.state.user.entries}
+               
               />
               <ImageLinkForm
+                
+                bees={bees}
                 onInputChange={this.onInputChange}
                 onButtonSubmit={this.onButtonSubmit}
               />
-              <FaceRecognition boxes={boxes} imageUrl={imageUrl} />
+              <FaceRecognition    boxes={boxes} imageUrl={imageUrl} />
             </div>
           : (
             // else display signin

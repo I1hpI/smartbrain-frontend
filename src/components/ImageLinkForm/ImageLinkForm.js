@@ -1,12 +1,17 @@
 import React from 'react';
 import './ImageLinkForm.css';
 
-const ImageLinkForm = ({ onInputChange, onButtonSubmit }) => {
+const ImageLinkForm = ({ onInputChange, onButtonSubmit,bees }) => {
   return (
     <div>
       <p className='f3'>
         {'Detects multiple faces in the image'}
       </p>
+     {bees &&
+      <div className='white f3'>
+      {`The number of faces detected in the given image is ${bees}`}
+      </div>
+     }
       <div className='center'>
         <div className='form center pa4 br3 shadow-5'>
          {/* on change triggers onInputChange and onClick triggers onbuttonsubmit */}
