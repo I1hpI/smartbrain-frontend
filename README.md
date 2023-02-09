@@ -2,7 +2,15 @@
 
 # Smartbrain
 
-**Description**:  This is a simple project where a user can input the image address of image with jpg extension in order to detect the faces in the image. This software can detect multiple faces instead of just one.
+**Description**: Full-stack React.JS web app that uses a Machine Learning API from Clarifai to identify faces on images. This is a simple project where a user can input the image address of image with jpg extension in order to detect the faces in the image. This software can detect multiple faces instead of just one.
+
+----
+
+Using a backend server developed using Node.JS and Express.JS, hosted REST API to handle requests and responses to process tasks (register account, login, detect faces on image).
+
+Used Tachyons npm package to help build responsive interface.
+
+Deployed React App and REST API using render platform.
 
 ## Dependencies
 
@@ -20,21 +28,22 @@ npm install
 ----
 also you need to have pgadmin 4 to run postgres database.
 
-## Configuration
+## Technologies Used:
 
-If the software is configurable, describe it in detail, either here or in other documentation to which you link.
+-   React.JS
+-   Node.JS
+-   Express.JS
+-   PostgresQL Database
+-   Render
+-   Clarifai API
+
 
 ## Usage
  
-Be specific.
-Use appropriate formatting when showing code snippets.
 1. First of all you have to login or register your name, email, and password 
 2. This will take you to the home of the app where you can copy and paste the image url(must end with jpg) into the input box
 3. Then, click on detect inorder to diplay the faces that have been detected in the given image.
 
-## How to test the software
-
-If the software includes automated tests, detail how to run those tests.
 
 ## Known issues
 
